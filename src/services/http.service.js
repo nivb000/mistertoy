@@ -1,5 +1,5 @@
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? `${window.location.protocol}/api/`
+    ? 'https://mistertoy-nextjs.vercel.app/api/'
     : 'http://localhost:3000/api/'
 
 export const httpService = {

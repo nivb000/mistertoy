@@ -1,0 +1,13 @@
+.toy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    border-radius: 15px;
+    place-content: center;
+    gap: 15px;
+    padding: 1.5rem 0;
+    box-shadow: 0 0 10px 0 black;
+    background: #eeeeee;
+    background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#eeeeee', GradientType=0)
+}

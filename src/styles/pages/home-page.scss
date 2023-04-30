@@ -1,0 +1,79 @@
+.home-page {
+    width: 100%;
+    height: calc(100vh - 70px);
+    flex-wrap: wrap;
+    background-color: hsla(316, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 0% 23%, hsla(199, 0%, 100%, 1) 0px, transparent 50%),
+        radial-gradient(at 35% 38%, hsla(316, 100%, 86%, 1) 0px, transparent 50%),
+        radial-gradient(at 60% 61%, hsla(217, 100%, 83%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 82%, hsla(0, 0%, 100%, 1) 0px, transparent 50%);
+
+        .left-side {
+        flex-basis: 35%;
+        
+        .text {
+            span {
+                font-family: 'Trebuchet MS';
+                font-weight: 700;
+                font-size: 5rem;
+                color: #A9C9FF;
+                
+                .inner-span {
+                    color: #FFBBEC;
+                }
+            }
+            
+            p {
+                margin-block-start: 3rem;
+                font-size: 1.2rem;
+                letter-spacing: -0.5px;
+                color: #989898;
+            }
+            
+            button {
+                margin-block-start: 3rem;
+                outline: 0;
+                border: 1px solid #ffa0e4;
+                background: transparent;
+                color: #ffa0e4;
+                border-radius: 30px;
+                padding: 0.5rem;
+                width: 120px;
+                cursor: pointer;
+                
+                &:hover {
+                    transition: all 0.5s;
+                    background-color: #ffa0e4;
+                    color: white;
+                }
+            }
+        }
+    }
+    
+    .right-side {
+        flex-basis: 65%;
+        justify-content: flex-end;
+        img {
+            position: relative;
+            top: 0px;
+            width: 600px;
+            height: 500px;
+            animation: imgrtr 2s infinite;
+        }
+    }
+}
+
+@keyframes imgrtr {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}

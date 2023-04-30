@@ -1,0 +1,26 @@
+.toy-edit{
+    height: calc(100vh - 70px);
+    margin-block-start: 3rem;
+    .edit-container{
+        width: 100%;
+        .edit-right{
+            flex-basis: 30%;
+        }
+        h1{
+            margin-block-end: 1rem;
+        } 
+        form{
+            width: 450px;
+            height: 450px;
+            .form-item{
+                .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+                    width: 100%;
+                }
+                select{
+                    width: 40%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.chat-room{
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    .chat-top-section{
+        background-color: black;
+        button{
+            color: white;
+            background-color: transparent;
+            border: 0;
+            margin-inline-start: 0.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    }
+    .chat-ui {
+        background-color: white;
+        width: 400px;
+        height: 450px;
+        .chat-input{
+            padding: 0.5rem;
+            border-top: 1px solid #e3e3e3;
+            input{
+                width: 80%;
+                outline: 0;
+                padding-left: 0.5rem;
+            }
+        }
+    }
+}

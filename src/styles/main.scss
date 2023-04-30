@@ -1,0 +1,21 @@
+@import './base.scss';
+
+
+// CMPS
+@import './cmps/app-header.scss';
+@import './cmps/toy-list.scss';
+@import './cmps/toy-filter.scss';
+@import './cmps/toy-preview.scss';
+@import './cmps/chat-room.scss';
+@import './cmps/map.scss';
+
+// PAGES
+@import './pages/home-page.scss';
+@import './pages/toy-app.scss';
+@import './pages/toy-details.scss';
+@import './pages/toy-edit.scss';
+@import './pages/about-us.scss';
+@import './pages/sign-in.scss';
+
+// Media query
+@import './mq.scss';

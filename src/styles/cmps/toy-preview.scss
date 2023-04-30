@@ -1,0 +1,18 @@
+.toy-preview {
+    border-bottom: 1px solid #222;
+    min-height: 295px;
+
+    img{
+        margin-block-start: 1rem;
+        width: 150px;
+    }
+    .preview-btns{
+        margin: 0.5rem 0; 
+        button{
+           margin-inline-start: 0.5rem;
+           padding: 3px;
+           border-radius: 10px;
+           cursor: pointer;
+       }
+    }
+}

@@ -1,0 +1,117 @@
+@media (max-width: 450px) {
+    .main-layout{width: 95%;}
+    header{
+        .header-nav{
+            .navbar{
+                display: none;
+            }
+            .user-header{
+                width: 30%;
+                border-width: 3px;
+                p{font-size: 0.6rem;}
+                button{font-size: 0.6rem;}
+            }
+            .mobile-nav-icon{
+                display: inline;
+                cursor: pointer;
+            }
+            .mobile-nav{
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                width: 100%;
+                height: 50%;
+                background-color: #A9C9FF;
+                background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);   
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                svg{cursor: pointer;}
+                a{
+                    text-decoration: none;
+                    color: black;
+                    &.active{
+                        border-top: 1px solid white;
+                    }
+                }
+                animation: slideIn 1s;
+            }
+        }
+    }
+    .home-page{
+        height: max-content;
+        .left-side{
+            align-items: center;
+            margin-block-start: 3rem;
+            .text{
+                inline-size: min-content;
+                span{font-size: 4rem;}
+            }
+        }
+        .right-side{
+            flex-direction: column;
+            justify-content: center;
+            img{
+                width: 100%;
+                height: 100%;
+                margin-block-end: 3rem;
+            }
+        }
+        .right-side, .left-side{
+            flex-basis: unset;
+        }
+    }
+    .toy-details{
+        .toy-details-container{
+            flex-direction: column;
+            margin-block-start: 3rem;
+            .toy-info-r{
+                height: 400px;
+                width: 100%;
+                box-shadow: none;
+                padding-inline-start: 1rem;
+                h1{
+                    align-self: flex-start;
+                }
+                .toy-categories{
+                    h3{
+                        text-align: left;
+                        margin-block-end: 1.5rem;
+                    }
+                }
+            }
+        }
+        .add-review{
+            form{width: 100%;}
+        }
+        .reviews{
+            .review-card{
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    .sign-in{
+        width: 100%;
+        form{width: 100%;}
+    }
+    .toy-edit{
+        margin-block-start: 2rem;
+        .edit-container{
+            flex-direction: column-reverse;
+            .edit-left{
+                width: 100%;
+                margin: 3rem 0;
+                form{
+                    width: auto;
+                }
+            }
+            .edit-right{
+                flex-basis: unset;
+                height: 300px;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model toy {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  price     Int
+  labels   String[]      
+  createdAt String    
+  inStock Boolean
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+model user {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  password   String   
+  username    String     @unique
+  fullName String
+  role UserRole @default(USER)
+}
+model review {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  toyId   String   
+  content    String
+  userFullName String
+  rating Int
+}

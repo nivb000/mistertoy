@@ -1,0 +1,9 @@
+.map-container{
+    margin-block-end: 3rem;
+    .map{
+        height: 50vh;
+        width: 100%;
+        border: 5px double black;
+        margin-block-start: 1rem;
+    }
+}

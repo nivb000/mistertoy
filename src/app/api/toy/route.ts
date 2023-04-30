@@ -4,7 +4,7 @@ import prisma from "@/lib/prismadb"
 export async function GET() {
     try {
         const toys = await prisma.toy.findMany()
-        return NextResponse.json(toys)
+        return NextResponse.json(toys, {status: 200})
     } catch (error) {
         return NextResponse.json({error})
     }

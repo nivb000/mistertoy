@@ -40,5 +40,5 @@ export const AddReview = ({ toyId }: { toyId: string }) => {
             <Button variant="contained" type='submit'>Add</Button>
         </form>
     </section>
-    else return <div></div>
+    else return null
 }

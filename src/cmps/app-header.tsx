@@ -9,7 +9,7 @@ import { useSession, signOut } from "next-auth/react"
 const headerFont = Righteous({ subsets: ['latin'], weight: '400' })
 
 export const AppHeader = () => {
-
+    
     const { data } = useSession()
     const [isMobile, setIsMobile] = useState(false)
 

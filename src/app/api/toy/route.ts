@@ -2,8 +2,12 @@ import { NextResponse } from "next/server"
 import prisma from "@/lib/prismadb"
 
 export async function GET() {
-    const toys = await prisma.toy.findMany()
-    return NextResponse.json(toys)
+    try {
+        const toys = await prisma.toy.findMany()
+        return NextResponse.json(toys)
+    } catch (error) {
+        return NextResponse.json({error})
+    }
 }
 export async function PUT(req: Request) {
     const { id, name, price, labels, createdAt, inStock } = await req.json()

@@ -4,7 +4,7 @@ import { AppHeader } from '@/cmps/app-header'
 import { SessionProvider } from 'next-auth/react'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Mister Toy',
   description: 'Mister Toy - Demo Project',
 }

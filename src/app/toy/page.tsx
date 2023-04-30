@@ -7,12 +7,17 @@ import { getServerSession } from "next-auth/next"
 import { Toy } from "@/interfaces/toy"
 
 async function getData(searchParams : any) {
-  let toys = await httpService.get('toy')
-  let { name, onlyInStock } = searchParams
-  onlyInStock = (onlyInStock === 'true') ? true : false
-  const regex = new RegExp(name, 'i')
-  toys = toys?.filter((toy: Toy) => regex.test(toy.name) && (!onlyInStock || toy.inStock))
-  return toys
+  try {
+    let toys = await httpService.get('toy')
+    let { name, onlyInStock } = searchParams
+    onlyInStock = (onlyInStock === 'true') ? true : false
+    const regex = new RegExp(name, 'i')
+    toys = toys?.filter((toy: Toy) => regex.test(toy.name) && (!onlyInStock || toy.inStock))
+    return toys
+  } catch (error) {
+    console.log('error is', error)
+    
+  }
 }
 
 

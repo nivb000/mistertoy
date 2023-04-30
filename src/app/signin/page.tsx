@@ -11,13 +11,13 @@ const Signin = () => {
         password: ''
     })
 
-    const handleChange = ({ target }) => {
+    const handleChange = ({ target }: any) => {
         const name = target.name
         const value = target.value
         setCreds(prevCred => ({ ...prevCred, [name]: value }))
     }
 
-    const handleLogin = async (ev: Event) => {
+    const handleLogin: React.FormEventHandler = async (ev) => {
         ev.preventDefault()
         await signIn('credentials', {
             username: creds.username,
@@ -27,7 +27,7 @@ const Signin = () => {
         })
     }
 
-    const handleDemoLogin = async (ev: Event) => {
+    const handleDemoLogin: React.FormEventHandler = async (ev) => {
         ev.preventDefault()
         await signIn('credentials', {
             username: 'john',

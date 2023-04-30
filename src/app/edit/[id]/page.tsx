@@ -19,7 +19,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) 
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 })
 
-const EditPage = ({ params }) => {
+const EditPage = ({ params }: any) => {
 
     const { data, isLoading } = useSWR(`/api/toy/${params.id}`, fetcher)
     const router = useRouter()
@@ -51,7 +51,7 @@ const EditPage = ({ params }) => {
                 value = (target.value === 'true') ? true : false
                 break
             case 'labels':
-                value = (typeof target.value === 'string') ? value.split(',') : target.value
+                value = (typeof target.value === 'string') ? target.value.split(',') : target.value
             case 'name':
                 value = target.value
                 break

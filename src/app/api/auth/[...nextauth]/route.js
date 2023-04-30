@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { compare, hash } from 'bcrypt'
-import prisma from "@/lib/prismadb"
+import { prisma } from "@/lib/prismadb"
 
 export const authOptions = {
     providers: [

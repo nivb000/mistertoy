@@ -15,8 +15,7 @@ async function getData(searchParams : any) {
     toys = toys?.filter((toy: Toy) => regex.test(toy.name) && (!onlyInStock || toy.inStock))
     return toys
   } catch (error) {
-    console.log('error is', error)
-    
+    throw error
   }
 }
 

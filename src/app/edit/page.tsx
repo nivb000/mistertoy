@@ -40,7 +40,7 @@ const AddNewPage = () => {
                 value = (target.value === 'true') ? true : false
                 break
             case 'labels':
-                value = (typeof target.value === 'string') ? value.split(',') : target.value
+                value = (typeof target.value === 'string') ? target.value.split(',') : target.value
             case 'name':
                 value = target.value
                 break

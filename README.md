@@ -1,7 +1,7 @@
 <h1 align="center">Mister toy - Website built with Next.js 13.2 Beta, featuring a toy store</h1>
-<h4>you can add, delete, and edit toys, as well as view an "About Us" page with a Google Map and a chart summarizing all the items. The website has a fully responsive design using SCSS and is connected to a MongoDB database using Prisma ORM. </h4>
+<h4>Add, delete, and edit toys, as well as view an "About Us" page with a Google Map and a chart summarizing all the items. The website has a fully responsive design using SASS and is connected to a MongoDB database using Prisma ORM. </h4>
 
-<p align="left">Airbna is an airbnb clone app where you can rent a stay for a vacation</p>
+
 <p>App is live <a href="https://mistertoy.vercel.app/">here</a></p>
 
 <h3>App features</h3>

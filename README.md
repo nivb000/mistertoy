@@ -39,7 +39,7 @@
   
   <h4>Toy Details Page</h4>
   
-  <img src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1682935795/Mister%20Toy%20Next/Screenshot_2023-05-01_at_13-09-41_https___mistertoy.vercel.app_aofj2u.png width="100%" />
+  <img src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1682935795/Mister%20Toy%20Next/Screenshot_2023-05-01_at_13-09-41_https___mistertoy.vercel.app_aofj2u.png" width="100%" />
   
   
   <h4>Responsive design</h4>

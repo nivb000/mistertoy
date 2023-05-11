@@ -114,4 +114,33 @@
             }
         }
     }
+    .cart{
+        flex-direction: column;
+        .left-cart{
+            ul{
+                li{
+                    img{
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .item-name, .item-price{
+                        font-size: 0.9rem;
+                    }
+                    div{
+                        span{
+                            transform: translateY(9%);
+                        }
+                        button{
+                            width: 2em;
+                            height: 2em;
+                        }
+                    }
+                }
+            }
+        }
+        .right-cart{
+            margin: 3rem 0;
+            .total-cart{width: 100%;}
+        }
+    }
 }

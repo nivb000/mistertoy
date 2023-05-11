@@ -4,6 +4,9 @@ import { Toy } from "@/interfaces/toy"
 import { AddReview } from "@/cmps/add-review"
 import { ReviewList } from "@/cmps/review-list"
 import { Reviews } from "@/interfaces/review"
+import AddToCart from "@/cmps/add-to-cart"
+import { getServerSession } from 'next-auth/next'
+import { authOptions } from "../../api/auth/[...nextauth]/route"
 
 const getToy = async (id: string) => {
     const toy: Toy = await httpService.get(`toy/${id}`)
@@ -11,7 +14,7 @@ const getToy = async (id: string) => {
 }
 
 const getToyReviews = async (toyId: string) => {
-    const reviews: Reviews = await httpService.get(`review/${toyId}`, 'default')
+    const reviews: Reviews = await httpService.get(`review/${toyId}`)
     return reviews
 }
 
@@ -19,6 +22,7 @@ export default async function ToyDetails({ params }: any) {
 
     const toy = await getToy(params.id)
     const reviews = await getToyReviews(params.id)
+    const data = await getServerSession(authOptions) 
 
     return <section className="toy-details">
         <div className="stepper">
@@ -36,8 +40,9 @@ export default async function ToyDetails({ params }: any) {
                 <h1>{toy.name}</h1>
                 <p className="sku">SKU: {toy.id}</p>
                 <span>{toy.price}.00$</span>
-                {toy.inStock ? <p style={{ color: 'green' }}>IN STOCK</p>
-                    : <p style={{ color: 'red' }}>Out of stock</p>
+                {toy.inStock ? <AddToCart toy={toy} />
+                : 
+                <p style={{ color: 'red' }}>OUT OF STOCK</p>
                 }
                 {toy.labels &&
                     <div className="toy-categories">
@@ -48,7 +53,7 @@ export default async function ToyDetails({ params }: any) {
                 }
             </div>
         </div>
-        <AddReview toyId={toy.id} />
+        <AddReview toyId={toy.id} user={data?.user} />
         <h1>Reviews</h1>
         <ReviewList reviews={reviews} />
     </section>

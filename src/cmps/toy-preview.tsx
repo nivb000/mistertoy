@@ -4,19 +4,17 @@ import Link from 'next/link'
 import Fab from '@mui/material/Fab'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
-import { useSession } from 'next-auth/react'
 import { httpService } from '@/services/http.service'
 import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { Toy } from '@/interfaces/toy'
 
 const Alert = forwardRef < HTMLDivElement, AlertProps> (function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 })
 
-export const ToyPreview = ({ toy } : {toy: Toy}) => {
+export const ToyPreview = ({ toy, user } : {toy: Toy, user: any}) => {
 
-    const { data } = useSession()
     const [isHovering, setIsHovering] = useState(false)
     const [alertData, setAlertData] = useState({
         open: false,
@@ -41,7 +39,7 @@ export const ToyPreview = ({ toy } : {toy: Toy}) => {
             <Link href={`/toy/${toy.id}`}><img src={`https://robohash.org/${toy.name}?set=set4`} alt="Toyimg" /></Link>
             <h1>{toy.name}</h1>
             <p>{toy.price}.00$</p>
-            {isHovering && data?.user.role === 'ADMIN' &&
+            {isHovering && user?.role === 'ADMIN' &&
                 <div className='preview-btns'>
                     <Link href={`/edit/${toy.id}`}>
                         <Fab size="small" color="primary" aria-label="add">

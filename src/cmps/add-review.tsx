@@ -1,18 +1,15 @@
 "use client"
 import { useState } from 'react'
 import Button from '@mui/material/Button'
-import { useSession } from "next-auth/react"
 import { httpService } from '@/services/http.service'
 import Rating from '@mui/material/Rating'
 
-export const AddReview = ({ toyId }: { toyId: string }) => {
-
-    const { data } = useSession()
+export const AddReview = ({ toyId, user }: { toyId: string, user: any }) => {
 
     const [review, setReview] = useState({
         toyId,
         content: '',
-        userFullName: data?.user.fullName,
+        userFullName: user?.fullName,
         rating: 1,
     })
 
@@ -32,7 +29,7 @@ export const AddReview = ({ toyId }: { toyId: string }) => {
         window.location.reload()
     }
 
-    if (data?.user) return <section className="flex col add-review">
+    if (user) return <section className="flex col add-review">
         <h1>Add review</h1>
         <form className='flex col space-between' onSubmit={handleAddComment}>
             <textarea value={review.content} onChange={handleChange} name="content" />

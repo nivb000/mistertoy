@@ -32,6 +32,6 @@ export default async function ToysPage({ searchParams } : {searchParams: any}) {
       </Link>
     }
     <ToyFilter />
-    <ToyList toys={toys} />
+    <ToyList toys={toys} user={data?.user} />
   </section>
 }

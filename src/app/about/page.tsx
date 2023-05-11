@@ -61,7 +61,7 @@ export default function About() {
         <div className='main-content'>
             <h1>About us</h1>
             <p>This is demo store project where you can add new toys, remove, edit, view details.
-            Project Is builded with Next.js 13.2 Beta version with App directory, Next-auth, SASS, fetch requests, Rest API Prisma ORM and more.
+            Project Is builded with Next.js 13 Beta version with App directory, Next-auth, SASS, fetch requests, Rest API Prisma ORM and more.
             </p>
             <h1>Dashboard</h1>
             <div className='flex justify-center dashboard-container'>

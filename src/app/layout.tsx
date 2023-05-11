@@ -1,20 +1,24 @@
-"use client"
 import '../styles/main.scss'
 import { AppHeader } from '@/cmps/app-header'
-import { SessionProvider } from 'next-auth/react'
+import { getServerSession } from 'next-auth/next'
+import { authOptions } from "./api/auth/[...nextauth]/route"
 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+
+  const data = await getServerSession(authOptions)
+
   return (
     <html lang="en">
-      <SessionProvider>
         <body>
-          <AppHeader />
-          <main className="main-layout">
-            {children}
-          </main>
+          <AppHeader user={data?.user} />
+            <main className="main-layout">
+              {children}
+            </main>
         </body>
-      </SessionProvider>
     </html >
   )
 }
+
+//YOU CAN WRAP THE BODY WITH <SessionProvider> imported from next-auth/react
+//AND INSIDE CLIENT COMPONENT const { data } = useSession() imported also from next-auth/react

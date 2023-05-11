@@ -29,6 +29,24 @@ header {
                 color: white;
             }
         }
+        .cart-navbar{
+            position: relative;
+            &::after{
+                content: attr(data-count);
+                position: absolute;
+                top: -3px;
+                left: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background-color: #0073ea;
+                color: white;
+                font-size: 0.9rem;
+            }
+        }
         .mobile-nav-icon{display: none;}
     }
 }

@@ -11,7 +11,7 @@ const OrderConfirm = () => {
                     <div className="success-extras">
                         <p>Thanks for your order <CheckCircleOutlineIcon /></p>
                         <p className="success-lrg">
-                            Sit back, relax or even better...go for a run! We'll take care of the rest.
+                            Sit back, relax or even better...go for a run! We&apos;ll take care of the rest.
                         </p>
                         <hr className="divider"/>
                     </div>

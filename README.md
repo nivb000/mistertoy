@@ -1,13 +1,14 @@
-<h1 align="center">Mister toy - Website built with Next.js 13.2 Beta, featuring a toy store</h1>
-<h4>Add, delete, and edit toys, as well as view an "About Us" page with a Google Map and a chart summarizing all the items. The website has a fully responsive design using SASS and is connected to a MongoDB database using Prisma ORM. </h4>
+<h1 align="center">Mister toy - Website built with Next.js 13 Beta App Directory, featuring a toy store</h1>
+<h4>Buy, Add, delete, and edit toys, as well as view an "About Us" page with a Google Map and a chart summarizing all the items. The website has a fully responsive design using SASS and is connected to a MongoDB database using Prisma ORM. </h4>
 
 
 <p>App is live <a href="https://mistertoy.vercel.app/">here</a></p>
 
 <h3>App features</h3>
 <ul>
-  <li>Full Stack Project build with Next.js 13.2 Beta with App directory</li>
+  <li>Full Stack Project build with Next.js 13 Beta with App directory</li>
   <li>Featuring all new Next Built-in Server on App Directory with API endpoints</li>
+  <li>Connected To Stripe API for purchases</li>
   <li>Add, Edit, Delete Toys Full CRUD</li>
   <li>Login system with Next Auth</li>
   <li>Complex search/filter system with Regular Expression and URL Search Params</li>
@@ -54,7 +55,7 @@
   
   <h3 id="fullstacklist">All tech stacks</h3>
   
-  <h4>🔵Framework: Next.js V13.2 Beta App Directory <img src="https://skillicons.dev/icons?i=nextjs" /></h4>
+  <h4>🔵Framework: Next.js V13 Beta App Directory <img src="https://skillicons.dev/icons?i=nextjs" /></h4>
   <ul>
   <li>🔵Lang: Typescript <img src="https://skillicons.dev/icons?i=ts" /></li>
   <li>🔵Style with SASS <img src="https://skillicons.dev/icons?i=sass" /></li>
@@ -68,6 +69,7 @@
   </ul>
   
   <h4>🔵Next.js Built-in server with API Endpoints on App Directory</h4>
+  <h4>🔵Connected To Stripe api, to accept Payment</h4>
   <h4>🔵Full CRUD REST Api using JS Fetch</h4>
   <h4>🔵Database management with PrismaORM <img src="https://skillicons.dev/icons?i=prisma" /></h4>
   <h4>🔵Database: MongoDB <img src="https://skillicons.dev/icons?i=mongodb" /></h4>

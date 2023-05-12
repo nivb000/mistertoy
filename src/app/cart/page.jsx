@@ -35,7 +35,7 @@ const ShoppingCart = () => {
 
     const getPaymentData = async () => {
         if(cartItems && cartItems.length !== 0){
-            const { clientSecret, orderAmount } = await httpService.post('/pay', cartItems)
+            const { clientSecret, orderAmount } = await httpService.post('pay', cartItems)
             setClientSecret(clientSecret)
             setOrderAmount(orderAmount)
         }

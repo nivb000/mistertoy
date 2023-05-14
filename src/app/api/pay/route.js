@@ -1,11 +1,29 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"
 import Stripe from 'stripe'
+
 
 const calculateOrderAmount = (toys) => {
     let totalPrice = 0
     toys.forEach(toy => totalPrice += toy.price * toy.quantity)
     return totalPrice
 }
+
+// const cors = Cors({
+//     methods: ['POST', 'GET', 'HEAD'],
+//     origin: '*'
+// })
+// function runMiddleware(req, res, fn) {
+//     return new Promise((resolve, reject) => {
+//         fn(req, res, (result) => {
+//             if (result instanceof Error) {
+//                 return reject(result)
+//             }
+
+//             return resolve(result)
+//         })
+//     })
+// }
+
 
 export async function POST(req) {
     try {

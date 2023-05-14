@@ -5,24 +5,9 @@ import Stripe from 'stripe'
 const calculateOrderAmount = (toys) => {
     let totalPrice = 0
     toys.forEach(toy => totalPrice += toy.price * toy.quantity)
+    totalPrice
     return totalPrice
 }
-
-// const cors = Cors({
-//     methods: ['POST', 'GET', 'HEAD'],
-//     origin: '*'
-// })
-// function runMiddleware(req, res, fn) {
-//     return new Promise((resolve, reject) => {
-//         fn(req, res, (result) => {
-//             if (result instanceof Error) {
-//                 return reject(result)
-//             }
-
-//             return resolve(result)
-//         })
-//     })
-// }
 
 
 export async function POST(req) {
@@ -31,7 +16,7 @@ export async function POST(req) {
         const toys = await req.json()
 
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: calculateOrderAmount(toys),
+            amount: calculateOrderAmount(toys) * 100,
             currency: "usd",
             automatic_payment_methods: {
                 enabled: true,

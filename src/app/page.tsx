@@ -5,11 +5,11 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: "Mister Toy",
-    description: "Mister Toy Full stack Project with Next.js 13.2 Beta",
+    description: "Mister Toy Full stack Project with Next.js 13 Beta",
     themeColor: "#A9C9FF"
 }
 
-export default async function HomePage () {
+export default async function HomePage() {
 
     return <section className="flex home-page">
         <div className="flex col justify-center left-side">
@@ -20,7 +20,7 @@ export default async function HomePage () {
             </div>
         </div>
         <div className="flex align-center right-side">
-          <Image alt='toy-image' src={bear} placeholder='empty' />
+            <Image alt='toy-image' src={bear} placeholder='empty' />
         </div>
     </section>
 }

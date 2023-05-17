@@ -15,16 +15,20 @@ const AddToCart = ({ toy }) => {
     })
 
     const saveToCart = () => {
-        const toyToAdd = { id: toy.id, name: toy.name, price: toy.price, quantity: 1 }
-        let cart = localStorage.getItem('cartItems')
-        if (!cart || Object.keys(cart) === 0) {
-            cart = []
-        } else {
-            cart = JSON.parse(cart)
+        try {
+            const toyToAdd = { id: toy.id, name: toy.name, price: toy.price, quantity: 1 }
+            let cart = localStorage.getItem('cartItems')
+            if (!cart || Object.keys(cart) === 0) {
+                cart = []
+            } else {
+                cart = JSON.parse(cart)
+            }
+            cart.push(toyToAdd)
+            localStorage.setItem('cartItems', JSON.stringify(cart))
+            setAlertData({ open: true, msg: `Toy ${toy.id} Added to cart` })
+        } catch (err) {
+            setAlertData({ open: true, msg: err.message })
         }
-        cart.push(toyToAdd)
-        localStorage.setItem('cartItems', JSON.stringify(cart))
-        setAlertData({ open: true, msg: `Toy ${toy.id} Added to cart` })
     }
 
 

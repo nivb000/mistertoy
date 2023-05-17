@@ -1,6 +1,7 @@
 .cart {
     font-family: 'Segoe UI';
     width: 100%;
+    height: calc(100vh - 70px);
     padding-block-start: 4rem;
     .left-cart {
         flex-basis: 50%;

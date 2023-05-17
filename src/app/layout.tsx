@@ -2,6 +2,7 @@ import '../styles/main.scss'
 import { AppHeader } from '@/cmps/app-header'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from "./api/auth/[...nextauth]/route"
+import { Footer } from '@/cmps/footer'
 
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -15,6 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <main className="main-layout">
               {children}
             </main>
+          <Footer />
         </body>
     </html >
   )

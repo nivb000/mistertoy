@@ -8,6 +8,7 @@ import { Righteous } from 'next/font/google'
 import { MultipleSelect } from "@/cmps/muilti-select"
 import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
+import Image from "next/image"
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -29,7 +30,7 @@ const AddNewPage = () => {
         inStock: true,
     })
 
-    const handleChange = ({target} : {target: any}) => {
+    const handleChange = ({ target }: { target: any }) => {
         const name = target.name
         let value: string | boolean | string[] | number
         switch (name) {
@@ -88,7 +89,7 @@ const AddNewPage = () => {
                     </form>
                 </div>
                 <div className="flex justify-center edit-right">
-                    <img src={`https://robohash.org/${toy?.name}?set=set4`} alt="Toy Preview image" />
+                    <Image src={`https://robohash.org/${toy.name}?set=set4`} width={300} height={300} alt="toy-image" />
                 </div>
             </div>
         </section>

@@ -1,4 +1,6 @@
 import { Spinner } from "@/cmps/spinner"
 export default function Loading() {
-    return <Spinner />
+    return <div style={{ height: '100vh' }}>
+        <Spinner />
+    </div>
 }

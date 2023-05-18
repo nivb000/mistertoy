@@ -1,8 +1,8 @@
-//@ts-nocheck
+
 import prisma from "@/lib/prismadb"
 import { redirect } from "next/navigation"
 
-async function create(formData: FormData) {
+async function create(formData: any) {
     "use server"
     const toy = await prisma.toy.create({
         data: {

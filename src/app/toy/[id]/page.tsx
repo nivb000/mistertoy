@@ -7,6 +7,7 @@ import { Reviews } from "@/interfaces/review"
 import AddToCart from "@/cmps/add-to-cart"
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from "../../api/auth/[...nextauth]/route"
+import Image from "next/image"
 
 const getToy = async (id: string) => {
     const toy: Toy = await httpService.get(`toy/${id}`)
@@ -22,7 +23,7 @@ export default async function ToyDetails({ params }: any) {
 
     const toy = await getToy(params.id)
     const reviews = await getToyReviews(params.id)
-    const data = await getServerSession(authOptions) 
+    const data = await getServerSession(authOptions)
 
     return <section className="toy-details">
         <div className="stepper">
@@ -34,15 +35,15 @@ export default async function ToyDetails({ params }: any) {
         </div>
         <div className='toy-details-container flex space-around'>
             <div className="toy-info-l">
-                <img src={`https://robohash.org/${toy.name}?set=set4`} alt="Toy" />
+                <Image src={`https://robohash.org/${toy.name}?set=set4`} width={300} height={300} alt="toy-image" />
             </div>
             <div className='toy-info-r flex col space-around'>
                 <h1>{toy.name}</h1>
                 <p className="sku">SKU: {toy.id}</p>
                 <span>{toy.price}.00$</span>
                 {toy.inStock ? <AddToCart toy={toy} />
-                : 
-                <p style={{ color: 'red' }}>OUT OF STOCK</p>
+                    :
+                    <p style={{ color: 'red' }}>OUT OF STOCK</p>
                 }
                 {toy.labels &&
                     <div className="toy-categories">

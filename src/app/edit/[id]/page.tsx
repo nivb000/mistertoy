@@ -12,6 +12,7 @@ import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { MultipleSelect } from "@/cmps/muilti-select"
 import { Righteous } from 'next/font/google'
+import Image from "next/image"
 
 const headerFont = Righteous({ subsets: ['latin'], weight: '400' })
 
@@ -69,7 +70,9 @@ const EditPage = ({ params }: any) => {
     }
 
 
-    if (isLoading) return <Spinner />
+    if (isLoading) return <div style={{ height: '100vh' }}>
+        <Spinner />
+    </div>
     return <>
         <section className={`flex col align-center ${headerFont.className} toy-edit`}>
             <h1>Toy Edit</h1>
@@ -100,7 +103,7 @@ const EditPage = ({ params }: any) => {
                     </form>
                 </div>
                 <div className="flex justify-center edit-right">
-                    <img src={`https://robohash.org/${toy?.name}?set=set4`} alt="Toy preview image" />
+                    <Image src={`https://robohash.org/${toy.name}?set=set4`} width={300} height={300} alt="toy-image" />
                 </div>
             </div>
         </section>

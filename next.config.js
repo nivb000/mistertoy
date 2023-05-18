@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   experimental: {
-    appDir: false,
-    serverActions: true
+    appDir: true
   },
   images: {
     domains: ['robohash.org'],

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   experimental: {
+    appDir: false,
     serverActions: true
   },
   images: {

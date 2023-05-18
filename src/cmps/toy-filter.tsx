@@ -10,7 +10,7 @@ export const ToyFilter = () => {
     const pathname = usePathname()
     const searchParams = useSearchParams()
     const isFirst = useRef(true)
-    const setParams = new URLSearchParams(searchParams)
+    const setParams = new URLSearchParams(searchParams as any)
 
     const [filter, setFilter] = useState({
         name: '',

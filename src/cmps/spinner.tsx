@@ -1,3 +1,4 @@
+//@ts-ignore
 import { BallTriangle } from 'svg-loaders-react'
 
 export const Spinner = () => <BallTriangle stroke="#A9C9FF"

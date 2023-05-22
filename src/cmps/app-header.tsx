@@ -53,7 +53,7 @@ export const AppHeader = ({ user }: any) => {
                 <Link href='/toy' className={pathname === "/toy" ? "active" : ''} onClick={() => setIsMobile(false)}>Our Toys</Link>
                 <Link href='/about' className={pathname === "/about" ? "active" : ''} onClick={() => setIsMobile(false)}>About us</Link>
                 {!user && <Link href='/signin'>Sign in</Link>}
-                <Link href='/cart' className={pathname === "/cart" ? "active" : ''} onClick={() => setIsMobile(false)} data-count={cartItemsLength} className="cart-navbar">
+                <Link href='/cart' className={pathname === "/cart" ? "active cart-navbar" : 'cart-navbar'} onClick={() => setIsMobile(false)} data-count={cartItemsLength}>
                     My Cart
                 </Link>
             </nav>

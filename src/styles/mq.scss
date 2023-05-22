@@ -19,6 +19,7 @@
                 position: absolute;
                 z-index: 3;
                 top: 0;
+                left: 0;
                 width: 100%;
                 height: 50%;
                 background-color: #A9C9FF;
@@ -141,6 +142,12 @@
         .right-cart{
             margin: 3rem 0;
             .total-cart{width: 100%;}
+        }
+    }
+    .footer{
+        div{
+            justify-content: center;
+            flex-wrap: wrap;
         }
     }
 }

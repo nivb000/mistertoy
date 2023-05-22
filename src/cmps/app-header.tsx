@@ -1,10 +1,12 @@
 "use client"
-import { useState, useEffect } from "react"
-import Link from "next/link"
+import { useState, useEffect, CSSProperties } from "react"
+import { usePathname } from 'next/navigation';
+import { signOut } from "next-auth/react"
 import { Righteous } from 'next/font/google'
+import Link from "next/link"
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import { signOut } from "next-auth/react"
+import LogoutIcon from '@mui/icons-material/Logout'
 
 const headerFont = Righteous({ subsets: ['latin'], weight: '400' })
 
@@ -12,6 +14,9 @@ export const AppHeader = ({ user }: any) => {
 
     const [isMobile, setIsMobile] = useState(false)
     const [cartItemsLength, setCartItemsLength] = useState(0)
+    const pathname = usePathname()
+
+    
 
     const handleLogout = (ev: Event) => {
         ev.preventDefault()
@@ -26,24 +31,29 @@ export const AppHeader = ({ user }: any) => {
         }
     }, [])
 
+    const homePageStyles: CSSProperties = {
+        backgroundImage: "none",
+        backgroundColor: "whitesmoke"
+    }
 
-    return <header>
+
+    return <header style={pathname === '/' ? homePageStyles : undefined}>
         <div className={`main-layout flex space-between align-center ${headerFont.className} header-nav`}>
             <Link href="/"><h1>Mister Toy</h1></Link>
             {user &&
                 <div className="flex space-between user-header">
                     <p>Welcome Back, {user?.fullName}</p>
                     <Link href="/api/auth/signout">
-                        <button onClick={() => handleLogout}>Log out</button>
+                        <LogoutIcon onClick={() => handleLogout} />
                     </Link>
                 </div>}
             <nav className={isMobile ? 'mobile-nav' : 'navbar'}>
                 {isMobile && <CloseIcon onClick={() => setIsMobile(false)} />}
-                <Link href='/' onClick={() => setIsMobile(false)}>Home</Link>
-                <Link href='/toy' onClick={() => setIsMobile(false)}>Our Toys</Link>
-                <Link href='/about' onClick={() => setIsMobile(false)}>About us</Link>
+                <Link href='/' className={pathname === "/" ? "active" : ''} onClick={() => setIsMobile(false)}>Home</Link>
+                <Link href='/toy' className={pathname === "/toy" ? "active" : ''} onClick={() => setIsMobile(false)}>Our Toys</Link>
+                <Link href='/about' className={pathname === "/about" ? "active" : ''} onClick={() => setIsMobile(false)}>About us</Link>
                 {!user && <Link href='/signin'>Sign in</Link>}
-                <Link href='/cart' onClick={() => setIsMobile(false)} data-count={cartItemsLength} className="cart-navbar">
+                <Link href='/cart' className={pathname === "/cart" ? "active" : ''} onClick={() => setIsMobile(false)} data-count={cartItemsLength} className="cart-navbar">
                     My Cart
                 </Link>
             </nav>

@@ -7,16 +7,9 @@ header {
         h1 {color: black;}
         .user-header{
             width: 20%;
-            border: 5px dotted white;
             padding: 0 0.3rem;
-            button{
-                outline: 0;
-                border: 0;
-                background: transparent;
-                cursor: pointer;
-                &:hover{
-                    color: white;
-                }
+            svg{
+                transform: scaleX(-1);
             }
         }
         
@@ -26,7 +19,6 @@ header {
             color: black;
             &.active{
                 text-decoration: overline;
-                color: white;
             }
         }
         .cart-navbar{

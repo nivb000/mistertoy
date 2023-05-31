@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: "Mister Toy",
     description: "Mister Toy Full stack Project with Next.js 13 Beta",
-    themeColor: "#A9C9FF"
+    themeColor: "#f5f5f5"
 }
 
 export default async function HomePage() {

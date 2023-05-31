@@ -10,13 +10,19 @@ import LogoutIcon from '@mui/icons-material/Logout'
 
 const headerFont = Righteous({ subsets: ['latin'], weight: '400' })
 
+const navLinks = [
+    { routeName: 'Home', href: '/' },
+    { routeName: 'Our Toys', href: '/toy' },
+    { routeName: 'About us', href: '/about' }
+]
+
 export const AppHeader = ({ user }: any) => {
 
     const [isMobile, setIsMobile] = useState(false)
     const [cartItemsLength, setCartItemsLength] = useState(0)
     const pathname = usePathname()
 
-    
+
 
     const handleLogout = (ev: Event) => {
         ev.preventDefault()
@@ -39,24 +45,27 @@ export const AppHeader = ({ user }: any) => {
 
     return <header style={pathname === '/' ? homePageStyles : undefined}>
         <div className={`main-layout flex space-between align-center ${headerFont.className} header-nav`}>
-            <Link href="/"><h1>Mister Toy</h1></Link>
-            {user &&
-                <div className="flex space-between user-header">
-                    <p>Welcome Back, {user?.fullName}</p>
-                    <Link href="/api/auth/signout">
-                        <LogoutIcon onClick={() => handleLogout} />
-                    </Link>
-                </div>}
+            <Link href="/"><h1>MISTER TOY</h1></Link>
             <nav className={isMobile ? 'mobile-nav' : 'navbar'}>
                 {isMobile && <CloseIcon onClick={() => setIsMobile(false)} />}
-                <Link href='/' className={pathname === "/" ? "active" : ''} onClick={() => setIsMobile(false)}>Home</Link>
-                <Link href='/toy' className={pathname === "/toy" ? "active" : ''} onClick={() => setIsMobile(false)}>Our Toys</Link>
-                <Link href='/about' className={pathname === "/about" ? "active" : ''} onClick={() => setIsMobile(false)}>About us</Link>
-                {!user && <Link href='/signin'>Sign in</Link>}
+                {navLinks.map(nav => <Link href={nav.href} key={nav.routeName}
+                    className={(pathname === nav.href) ? "active" : ""}
+                    onClick={() => setIsMobile(false)}>
+                    {nav.routeName}
+                </Link>)}
                 <Link href='/cart' className={pathname === "/cart" ? "active cart-navbar" : 'cart-navbar'} onClick={() => setIsMobile(false)} data-count={cartItemsLength}>
                     My Cart
                 </Link>
             </nav>
+            {user ?
+                <div className="flex user-header">
+                    <p>Welcome Back, {user?.fullName}</p>
+                    <Link href="/api/auth/signout">
+                        <LogoutIcon onClick={() => handleLogout} />
+                    </Link>
+                </div>
+            :
+            <Link href="/signin" onClick={() => setIsMobile(false)}>Sign in</Link>}
             <MenuIcon className="mobile-nav-icon" onClick={() => setIsMobile(true)} />
         </div>
     </header>

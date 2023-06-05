@@ -99,11 +99,12 @@
     }
     .toy-edit{
         margin-block-start: 2rem;
+        min-height: 100vh;
         .edit-container{
             flex-direction: column-reverse;
             .edit-left{
                 width: 100%;
-                margin: 3rem 0;
+                margin: 1.5rem 0;
                 form{
                     width: auto;
                 }

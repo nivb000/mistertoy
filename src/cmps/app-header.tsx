@@ -59,7 +59,7 @@ export const AppHeader = ({ user }: any) => {
             </nav>
             {user ?
                 <div className="flex user-header">
-                    <p>Welcome Back, {user?.fullName}</p>
+                    <p>Welcome, <br /> {user?.fullName}</p>
                     <Link href="/api/auth/signout">
                         <LogoutIcon onClick={() => handleLogout} />
                     </Link>
